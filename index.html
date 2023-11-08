@@ -9,139 +9,140 @@
     <title>Document</title>
 </head>
 <body class="bg-body-secondary">
-    <div class="container-fluid d-flex flex-md-column">
-    <!--//// NAVIGATION BAR//////// -->
-        <nav class="d-flex row navbar navbar-expand-sm fixed-top bg-light">
-            <div class="col-1 justify-content-start">
-                <a href="./index.html">
-                    <img style="height: 40px;" class="ml-5" src="https://dev-to-uploads.s3.amazonaws.com/uploads/logos/resized_logo_UQww2soKuUsjaOGNB38o.png" 
+    <!-- //////////////////////////////NAVBAR/////////////////////// -->
+    <section class="navbar fixed-top bg-light d-flex flex-row justify-content-center">
+        <div class="d-flex flex-row col col-10 justify-content-between">
+            <div class="d-flex flex-row justify-content-between">
+                <a href="./index.html" class="d-flex align-items-center">
+                    <img style="height: 40px;" src="https://dev-to-uploads.s3.amazonaws.com/uploads/logos/resized_logo_UQww2soKuUsjaOGNB38o.png" 
                     alt="Dev.to">
                 </a>
-            </div>
-            <div class="col-7">
-                <form class="d-flex justify-content-center">
-                    <input class="form-control me-2 d-flex" type="text" placeholder="Search">
-                    <button class="btn btn-primary d-flex align-items-center" type="button">
+                <form class="d-flex flex-row m-1">
+                    <input class="form-control m-2 " type="text" placeholder="Search">
+                    <button class="btn btn-primary d-flex flex-row m-2 align-items-center" type="button">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
                             <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
                         </svg>                  
                     </button>
                 </form>
             </div>
-            <div class="col-4 d-flex justify-content-end">
+            <div>
                 <div class="loginButton btn btn-outline-primary m-2">Login</div>
                 <div class="createAccountButton btn btn-primary m-2 mr-0">Create Account</div>
             </div>
-        </nav>
-    <!-- ////////////ASIDE LEFT//////////////// -->
-        <div style="margin-top: 80px;" class="d-flex container-fluid bg-body-secondary col-12">
-            <div class="aside-left col-2 d-flex flex-column m-1">
-                <div class="d-flex flex-column border rounded bg-light border-secondary-subtle">
-                    <h5 class="p-2 strong">DEV Community is a community of 1,184,207 amazing developers</h5>
-                    <p class="p-2">We're a place where coders share, stay up-to-date and grow their careers.</p>
-                    <button class="createAccountButton d-flex justify-content-center btn btn-primary m-2 mr-0">Create Account</button>
-                    <button class="loginButton d-flex justify-content-center btn btn-outline-primary m-2">Login</button>
-                </div>
-                <div class="d-flex flex-column">
-                    <div class="btn border rounded d-flex justify-content-start">
-                        <a class="icon-link icon-link-hover d-flex justify-content-start"  style="--bs-icon-link-transform: translate3d(0, -.125rem, 0);" href="#">
-                            🏠Home
-                        </a>
-                    </div>
-                </div>
-                <div class="d-flex flex-column"></div>
+        </div>
+    </section>
+    
+    <div style="margin-top: 80px;" class="d-flex container-fluid bg-body-secondary col-10">
+        <!-- ////////////ASIDE LEFT//////////////// -->
+        <div class="aside-left col-2 d-flex flex-column m-1">
+            <div class="d-flex flex-column border rounded bg-light border-secondary-subtle">
+                <h5 class="p-2 strong">DEV Community is a community of 1,184,207 amazing developers</h5>
+                <p class="p-2">We're a place where coders share, stay up-to-date and grow their careers.</p>
+                <button class="createAccountButton d-flex justify-content-center btn btn-primary m-2 mr-0">Create Account</button>
+                <button class="loginButton d-flex justify-content-center btn btn-outline-primary m-2">Login</button>
             </div>
-
+            <div class="d-flex flex-column">
+                <div class="btn border rounded d-flex justify-content-start">
+                    <a class="icon-link icon-link-hover d-flex justify-content-start"  style="--bs-icon-link-transform: translate3d(0, -.125rem, 0);" href="#">
+                        🏠Home
+                    </a>
+                </div>
+            </div>
+        </div>
+    
 
             <!-- ///////////////// POST COLUMN////////////////// -->
-            <div id="postsColumn" class="col-6 border border-warning d-flex flex-column m-1">
-                <nav class="d-flex flex-row m-2 justify-content-start">
-                    <a href="" class="btn btn-light col col-2 p-1 m-1 fs-5 text-decoration-none text-dark">Relevant</a>
-                    <a href="" class="btn btn-light col col-2 p-1 m-1 fs-5 text-decoration-none text-dark">Latest</a>
-                    <a href="" class="btn btn-light col col-2 p-1 m-1 fs-5 text-decoration-none text-dark">Top</a>
-                </nav>
-                <div class="d-flex flex-column col col-12">
- <!-- //////////// MAIN CARD//////////////////// -->
-                    <div id="mainCard" class="card">
-                        <img src="https://picsum.photos/600/280" class="card-img-top" alt="Picture on the post">
-                        <div id="post-Creator" class="card-body">
-                            <img src="https://randomuser.me/api/portraits/men/12.jpg" class="card-img-top rounded-circle" style="width: 30px;" alt="...">
-                            <span class="card-text">UserName</span>
+        <div id="postsColumn" class="col-7 d-flex flex-column m-1">
+            <nav class="d-flex flex-row justify-content-start">
+                <a href="" class="btn btn-light col col-2 p-1 m-1 fs-5 text-decoration-none text-dark">Relevant</a>
+                <a href="" class="btn btn-light col col-2 p-1 m-1 fs-5 text-decoration-none text-dark">Latest</a>
+                <a href="" class="btn btn-light col col-2 p-1 m-1 fs-5 text-decoration-none text-dark">Top</a>
+            </nav>
+            <div class="d-flex flex-column col col-12">
+                <!-- //////////// MAIN CARD//////////////////// -->
+                <div id="mainCard" class="card m-1">
+                    <img src="https://picsum.photos/600/280" class="card-img-top" alt="Picture on the post">
+                    <div id="post-Creator" class="card-body">
+                        <img src="https://randomuser.me/api/portraits/men/12.jpg" class="card-img-top rounded-circle" style="width: 30px;" alt="...">
+                        <span class="card-text">UserName</span>
+                    </div>
+                    <div style="padding-left: 40px;">
+                        <div class="card-body">
+                            <h2 class="card-title fw-bold">Card title</h2>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         </div>
-                        <div style="padding-left: 40px;">
-                            <div class="card-body">
-                                <h2 class="card-title fw-bold">Card title</h2>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            </div>
-                            <div id="card-tags" class="pl-5">
-                                <a href="" class="badge text-bg-light text-decoration-none">#TagExample1</a>
-                                <a href="" class="badge text-bg-light text-decoration-none">#TagExample2</a>
-                                <a href="" class="badge text-bg-light text-decoration-none">#TagExample3</a>
-                                <a href="" class="badge text-bg-light text-decoration-none">#TagExample4</a>
-                            </div>
-                            <div class="d-flex flex-row p-2">
-                                <div id="reactionsCounter" class="m-2 fs-6">🤔❤️👍😒Reactions</div>
-                                <a href="" id="addComment" class="m-2 fs-6 text-decoration-none text-dark">🗨️ Add Comment</a>
-                            </div>
+                        <div id="card-tags" class="pl-5">
+                            <a href="" class="badge text-bg-light text-decoration-none">#TagExample1</a>
+                            <a href="" class="badge text-bg-light text-decoration-none">#TagExample2</a>
+                            <a href="" class="badge text-bg-light text-decoration-none">#TagExample3</a>
+                            <a href="" class="badge text-bg-light text-decoration-none">#TagExample4</a>
+                        </div>
+                        <div class="d-flex flex-row p-2">
+                            <div id="reactionsCounter" class="m-2 fs-6">🤔❤️👍😒Reactions</div>
+                            <a href="" id="addComment" class="m-2 fs-6 text-decoration-none text-dark">🗨️ Add Comment</a>
                         </div>
                     </div>
-<!-- //////////// SECONDARY CARD//////////////////// -->
-                    <div id="secondaryPostcard" class="card">
-                        <div id="post-Creator" class="card-body">
-                            <img src="https://randomuser.me/api/portraits/men/12.jpg" class="card-img-top rounded-circle" style="width: 30px;" alt="...">
-                            <span class="card-text">UserName</span>
+                </div>
+                <!-- //////////// SECONDARY CARD//////////////////// -->
+                <div id="secondaryPostcard" class="card m-1">
+                    <div id="post-Creator" class="card-body">
+                        <img src="https://randomuser.me/api/portraits/men/12.jpg" class="card-img-top rounded-circle" style="width: 30px;" alt="...">
+                        <span class="card-text">UserName</span>
+                    </div>
+                    <div style="padding-left: 40px;">
+                        <div class="card-body">
+                            <h2 class="card-title fw-bold">Card title</h2>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         </div>
-                        <div style="padding-left: 40px;">
-                            <div class="card-body">
-                                <h2 class="card-title fw-bold">Card title</h2>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            </div>
-                            <div id="card-tags" class="pl-5">
-                                <a href="" class="badge text-bg-light text-decoration-none">#TagExample1</a>
-                                <a href="" class="badge text-bg-light text-decoration-none">#TagExample2</a>
-                                <a href="" class="badge text-bg-light text-decoration-none">#TagExample3</a>
-                                <a href="" class="badge text-bg-light text-decoration-none">#TagExample4</a>
-                            </div>
-                            <div class="d-flex flex-row p-2">
-                                <div id="reactionsCounter" class="m-2 fs-6">🤔❤️👍😒Reactions</div>
-                                <a href="" id="addComment" class="m-2 fs-6 text-decoration-none text-dark">🗨️ Add Comment</a>
-                            </div>
+                        <div id="card-tags" class="pl-5">
+                            <a href="" class="badge text-bg-light text-decoration-none">#TagExample1</a>
+                            <a href="" class="badge text-bg-light text-decoration-none">#TagExample2</a>
+                            <a href="" class="badge text-bg-light text-decoration-none">#TagExample3</a>
+                            <a href="" class="badge text-bg-light text-decoration-none">#TagExample4</a>
+                        </div>
+                        <div class="d-flex flex-row p-2">
+                            <div id="reactionsCounter" class="m-2 fs-6">🤔❤️👍😒Reactions</div>
+                            <a href="" id="addComment" class="m-2 fs-6 text-decoration-none text-dark">🗨️ Add Comment</a>
                         </div>
                     </div>
+                </div>
 
-<!-- //////////// NORMAL CARD//////////////////// -->
-                    <div id="normalPostcard" class="card">
-                        <div id="post-Creator" class="card-body">
-                            <img src="https://randomuser.me/api/portraits/men/12.jpg" class="card-img-top rounded-circle" style="width: 30px;" alt="...">
-                            <span class="card-text">UserName</span>
+                <!-- //////////// NORMAL CARD//////////////////// -->
+                <div id="normalPostcard" class="card m-1">
+                    <div id="post-Creator" class="card-body">
+                        <img src="https://randomuser.me/api/portraits/men/12.jpg" class="card-img-top rounded-circle" style="width: 30px;" alt="...">
+                        <span class="card-text">UserName</span>
+                    </div>
+                    <div style="padding-left: 40px;">
+                        <div class="card-body">
+                            <h2 class="card-title fw-bold">Card title</h2>
                         </div>
-                        <div style="padding-left: 40px;">
-                            <div class="card-body">
-                                <h2 class="card-title fw-bold">Card title</h2>
-                            </div>
-                            <div id="card-tags" class="pl-5">
-                                <a href="" class="badge text-bg-light text-decoration-none">#TagExample1</a>
-                                <a href="" class="badge text-bg-light text-decoration-none">#TagExample2</a>
-                                <a href="" class="badge text-bg-light text-decoration-none">#TagExample3</a>
-                                <a href="" class="badge text-bg-light text-decoration-none">#TagExample4</a>
-                            </div>
-                            <div class="d-flex flex-row p-2">
-                                <div id="reactionsCounter" class="m-2 fs-6">🤔❤️👍😒Reactions</div>
-                                <a href="" id="addComment" class="m-2 fs-6 text-decoration-none text-dark">🗨️ Add Comment</a>
-                            </div>
+                        <div id="card-tags" class="pl-5">
+                            <a href="" class="badge text-bg-light text-decoration-none">#TagExample1</a>
+                            <a href="" class="badge text-bg-light text-decoration-none">#TagExample2</a>
+                            <a href="" class="badge text-bg-light text-decoration-none">#TagExample3</a>
+                            <a href="" class="badge text-bg-light text-decoration-none">#TagExample4</a>
+                        </div>
+                        <div class="d-flex flex-row p-2">
+                            <div id="reactionsCounter" class="m-2 fs-6">🤔❤️👍😒Reactions</div>
+                            <a href="" id="addComment" class="m-2 fs-6 text-decoration-none text-dark">🗨️ Add Comment</a>
                         </div>
                     </div>
-                    </div>
-                    </div>
+                </div>
+            </div>
+    </div>
 
 
             <!-- ////////////////////ASIDE RIGHT///////////////////// -->
-            <div class="aside-right col-4 border border-danger d-flex m-1">
-                <p>hashtags</p>
-            </div>
+        <div class="aside-right col-3 border border-danger d-flex m-1">
+            <p>Tags
+            </p>
+        </div>
 
             <!-- ////////////////////////FOOTER////////////////////////////// -->
-            <div></div>
+        <div></div>
+            </div>
         </div>
     </div>
 
