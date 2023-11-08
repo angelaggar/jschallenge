@@ -10,7 +10,8 @@
 </head>
 <body class="bg-body-secondary">
     <div class="container-fluid d-flex flex-md-column">
-        <div class="d-flex row navbar navbar-expand-sm fixed-top bg-light">
+    <!--//// NAVIGATION BAR//////// -->
+        <nav class="d-flex row navbar navbar-expand-sm fixed-top bg-light">
             <div class="col-1 justify-content-start">
                 <a href="./index.html">
                     <img style="height: 40px;" class="ml-5" src="https://dev-to-uploads.s3.amazonaws.com/uploads/logos/resized_logo_UQww2soKuUsjaOGNB38o.png" 
@@ -31,10 +32,11 @@
                 <div class="loginButton btn btn-outline-primary m-2">Login</div>
                 <div class="createAccountButton btn btn-primary m-2 mr-0">Create Account</div>
             </div>
-        </div>
+        </nav>
+    <!-- ////////////ASIDE LEFT//////////////// -->
         <div style="margin-top: 80px;" class="d-flex container-fluid bg-body-secondary col-12">
             <div class="aside-left col-2 d-flex flex-column m-1">
-                <div class="bg-light border rounded border-secondary-subtle">
+                <div class="d-flex flex-column border rounded bg-light border-secondary-subtle">
                     <h5 class="p-2 strong">DEV Community is a community of 1,184,207 amazing developers</h5>
                     <p class="p-2">We're a place where coders share, stay up-to-date and grow their careers.</p>
                     <button class="createAccountButton d-flex justify-content-center btn btn-primary m-2 mr-0">Create Account</button>
@@ -47,19 +49,99 @@
                         </a>
                     </div>
                 </div>
-                <div class="d-flex flex-column">
-                    <div id="firstPostcard"></div>
-                    <div id="secondaryPostcard"></div>
-                    <div id="normalPostcard"></div>
-                </div>
                 <div class="d-flex flex-column"></div>
             </div>
-            <div class="postsColumn col-6 border border-warning d-flex m-1">
-                <p>posts</p>
-            </div>
+
+
+            <!-- ///////////////// POST COLUMN////////////////// -->
+            <div id="postsColumn" class="col-6 border border-warning d-flex flex-column m-1">
+                <nav class="d-flex flex-row m-2 justify-content-start">
+                    <a href="" class="btn btn-light col col-2 p-1 m-1 fs-5 text-decoration-none text-dark">Relevant</a>
+                    <a href="" class="btn btn-light col col-2 p-1 m-1 fs-5 text-decoration-none text-dark">Latest</a>
+                    <a href="" class="btn btn-light col col-2 p-1 m-1 fs-5 text-decoration-none text-dark">Top</a>
+                </nav>
+                <div class="d-flex flex-column col col-12">
+ <!-- //////////// MAIN CARD//////////////////// -->
+                    <div id="mainCard" class="card">
+                        <img src="https://picsum.photos/600/280" class="card-img-top" alt="Picture on the post">
+                        <div id="post-Creator" class="card-body">
+                            <img src="https://randomuser.me/api/portraits/men/12.jpg" class="card-img-top rounded-circle" style="width: 30px;" alt="...">
+                            <span class="card-text">UserName</span>
+                        </div>
+                        <div style="padding-left: 40px;">
+                            <div class="card-body">
+                                <h2 class="card-title fw-bold">Card title</h2>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
+                            <div id="card-tags" class="pl-5">
+                                <a href="" class="badge text-bg-light text-decoration-none">#TagExample1</a>
+                                <a href="" class="badge text-bg-light text-decoration-none">#TagExample2</a>
+                                <a href="" class="badge text-bg-light text-decoration-none">#TagExample3</a>
+                                <a href="" class="badge text-bg-light text-decoration-none">#TagExample4</a>
+                            </div>
+                            <div class="d-flex flex-row p-2">
+                                <div id="reactionsCounter" class="m-2 fs-6">🤔❤️👍😒Reactions</div>
+                                <a href="" id="addComment" class="m-2 fs-6 text-decoration-none text-dark">🗨️ Add Comment</a>
+                            </div>
+                        </div>
+                    </div>
+<!-- //////////// SECONDARY CARD//////////////////// -->
+                    <div id="secondaryPostcard" class="card">
+                        <div id="post-Creator" class="card-body">
+                            <img src="https://randomuser.me/api/portraits/men/12.jpg" class="card-img-top rounded-circle" style="width: 30px;" alt="...">
+                            <span class="card-text">UserName</span>
+                        </div>
+                        <div style="padding-left: 40px;">
+                            <div class="card-body">
+                                <h2 class="card-title fw-bold">Card title</h2>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
+                            <div id="card-tags" class="pl-5">
+                                <a href="" class="badge text-bg-light text-decoration-none">#TagExample1</a>
+                                <a href="" class="badge text-bg-light text-decoration-none">#TagExample2</a>
+                                <a href="" class="badge text-bg-light text-decoration-none">#TagExample3</a>
+                                <a href="" class="badge text-bg-light text-decoration-none">#TagExample4</a>
+                            </div>
+                            <div class="d-flex flex-row p-2">
+                                <div id="reactionsCounter" class="m-2 fs-6">🤔❤️👍😒Reactions</div>
+                                <a href="" id="addComment" class="m-2 fs-6 text-decoration-none text-dark">🗨️ Add Comment</a>
+                            </div>
+                        </div>
+                    </div>
+
+<!-- //////////// NORMAL CARD//////////////////// -->
+                    <div id="normalPostcard" class="card">
+                        <div id="post-Creator" class="card-body">
+                            <img src="https://randomuser.me/api/portraits/men/12.jpg" class="card-img-top rounded-circle" style="width: 30px;" alt="...">
+                            <span class="card-text">UserName</span>
+                        </div>
+                        <div style="padding-left: 40px;">
+                            <div class="card-body">
+                                <h2 class="card-title fw-bold">Card title</h2>
+                            </div>
+                            <div id="card-tags" class="pl-5">
+                                <a href="" class="badge text-bg-light text-decoration-none">#TagExample1</a>
+                                <a href="" class="badge text-bg-light text-decoration-none">#TagExample2</a>
+                                <a href="" class="badge text-bg-light text-decoration-none">#TagExample3</a>
+                                <a href="" class="badge text-bg-light text-decoration-none">#TagExample4</a>
+                            </div>
+                            <div class="d-flex flex-row p-2">
+                                <div id="reactionsCounter" class="m-2 fs-6">🤔❤️👍😒Reactions</div>
+                                <a href="" id="addComment" class="m-2 fs-6 text-decoration-none text-dark">🗨️ Add Comment</a>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    </div>
+
+
+            <!-- ////////////////////ASIDE RIGHT///////////////////// -->
             <div class="aside-right col-4 border border-danger d-flex m-1">
                 <p>hashtags</p>
             </div>
+
+            <!-- ////////////////////////FOOTER////////////////////////////// -->
+            <div></div>
         </div>
     </div>
 
