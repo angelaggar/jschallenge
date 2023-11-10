@@ -1,3 +1,8 @@
+//botones//
+const relevant = document.getElementById("relevant")
+const latest = document.getElementById("latest")
+const top = document.getElementById("top")
+
 ///////////////API para llamar a los post/////////////
 const arrPost = []
 const getPost = async() =>{
@@ -11,8 +16,8 @@ const getPost = async() =>{
 let cardColumn = document.getElementById("cardColumn")
 const cardGen = async(postDb) =>{
     
+    
     const {author, body, comments, cover, picture, rate, tags, time, title} = postDb
-    console.log(cover)
     const mainC = document.createElement("div")
     const anchor = document.createElement("a")
     const image = document.createElement("img")
@@ -27,40 +32,48 @@ const cardGen = async(postDb) =>{
     const hashTag = document.createElement("p")
     const reactionContainer = document.createElement("div")
     const reactions = document.createElement("div")
-    const commentsC = document.createElement("a")
+    const commentsC = document.createElement("p")
+    const date = document.createElement("p")
 
     //reacciones//
     reactionContainer.classList.add("d-flex", "flex-row", "p-2")
     reactions.classList.add("mx-2", "fs-6")
-    commentsC.classList.add("mx-2", "f-6", "text-recoration-none")
+    reactions.innerText = `🤔❤️👍😒Reactions ${rate}`
+    commentsC.classList.add("mx-2", "f-6", "text-decoration-none")
+    comments.length == 0 || comments.length == undefined ? commentsC.innerText =`🗨️ Add Comment`: commentsC.innerText = `🗨️ Comments ${comments.length}`
     reactionContainer.append(reactions, commentsC)
 
     //hashtags//
     hashTagsContainer.classList.add("pl-5")
     hashTag.classList.add("badge", "text-bg-light", "text-decoration-none")
+    hashTag.innerHTML = tags
     hashTagsContainer.append(hashTag)
 
     //card info//
     infoText.classList.add("card-text")
     infoTitle.classList.add("card-title", "fw-bold")
-    info.append(infoText, infoTitle)
+    infoTitle.innerHTML = title
+    infoText.innerHTML = body
+    info.append(infoTitle, infoText)
 
     //info container//
     infoContainer.classList.add("p-4")
     infoContainer.append(info, hashTag, reactionContainer)
 
     //icon profile//
-    userNameText.classList.add("card-text")
+    userNameText.classList.add("card-text", "p-2")
     profilePic.classList.add("card-img-top", "rounded-circle")
     profilePic.classList.add("w-3")
     profilePic.setAttribute("src", `${picture}`)
     profilePic.setAttribute("style", "width: 35px;")
     infoUser.classList.add("post-Creator", "card-body", "d-flex", "flex-row")
+    userNameText.innerHTML = author
     infoUser.append(profilePic, userNameText)
 
     //top image// 
     image.classList.add("card-img-top")
     image.setAttribute("src", `${cover}`)
+    
     anchor.classList.add("postlink")
     anchor.append(image)
     
@@ -68,13 +81,34 @@ const cardGen = async(postDb) =>{
     mainC.classList.add("card", "m-1")
     mainC.append(anchor, infoUser, infoContainer)
     cardColumn.append(mainC)
-    console.log(cardColumn)
 }
-const cardsDb = async() =>{
+const cardsRelevant = async() =>{
+    cardColumn.innerHTML = ""
     const postDb = await getPost()
-
+    await [postDb][0].sort((a, b) => { return b.rate - a.rate})
     postDb.map(item =>{
         cardGen(item)
     })
+    console.log("hola")
 }
-cardsDb()
+cardsRelevant()
+
+const cardsLatest = async() =>{
+    cardColumn.innerHTML = ""
+    const postDb = await getPost()
+    await [postDb][0].sort((a, b) => { return new Date(b.time).getTime() - new Date(a.time).getTime()})
+    console.log(postDb)
+    postDb.map(item =>{
+        cardGen(item)
+    })
+    console.log("hola")
+}
+
+relevant.addEventListener("click", function(e){
+    e.preventDefault
+    cardsRelevant()
+})
+latest.addEventListener("click", function(e){
+    e.preventDefault
+    cardsLatest()
+})
