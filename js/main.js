@@ -14,7 +14,7 @@ const toggleViews = async () => {
     let loggedBox = document.getElementById("loggedBox")
 
     let token = localStorage.getItem("token");
-    console.log(token)
+
     if (token){
         loginBox.classList.add("d-none")
         loginButton.classList.add("d-none") 
