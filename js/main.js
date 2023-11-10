@@ -34,6 +34,7 @@ const cardGen = async(postDb) =>{
     const reactions = document.createElement("div")
     const commentsC = document.createElement("p")
     const date = document.createElement("p")
+    const contDate = document.createElement("div")
 
     //reacciones//
     reactionContainer.classList.add("d-flex", "flex-row", "p-2")
@@ -65,10 +66,14 @@ const cardGen = async(postDb) =>{
     profilePic.classList.add("card-img-top", "rounded-circle")
     profilePic.classList.add("w-3")
     profilePic.setAttribute("src", `${picture}`)
-    profilePic.setAttribute("style", "width: 35px;")
+    profilePic.setAttribute("style", "width: 85px;")
     infoUser.classList.add("post-Creator", "card-body", "d-flex", "flex-row")
+    contDate.classList.add("d-flex", "flex-column")
     userNameText.innerHTML = author
-    infoUser.append(profilePic, userNameText)
+    date.innerText = new Date(time).toLocaleDateString('en-us', { month:"short", day:"numeric"}) 
+    contDate.append(userNameText, date)
+    infoUser.append(profilePic, contDate)
+
 
     //top image// 
     image.classList.add("card-img-top")
@@ -86,10 +91,11 @@ const cardsRelevant = async() =>{
     cardColumn.innerHTML = ""
     const postDb = await getPost()
     await [postDb][0].sort((a, b) => { return b.rate - a.rate})
-    postDb.map(item =>{
+    cardGen(postDb[0])
+    await [postDb][0].sort(() =>{return Math.random() - 0.5})
+    postDb.map((item) =>{
         cardGen(item)
     })
-    console.log("hola")
 }
 cardsRelevant()
 
@@ -98,6 +104,15 @@ const cardsLatest = async() =>{
     const postDb = await getPost()
     await [postDb][0].sort((a, b) => { return new Date(b.time).getTime() - new Date(a.time).getTime()})
     console.log(postDb)
+    postDb.map((item) =>{
+        cardGen(item)
+    })
+    console.log("hola")
+}
+const cardsTop = async() =>{
+    cardColumn.innerHTML = ""
+    const postDb = await getPost()
+    await [postDb][0].sort((a, b) => { return b.rate - a.rate})
     postDb.map(item =>{
         cardGen(item)
     })
@@ -111,4 +126,8 @@ relevant.addEventListener("click", function(e){
 latest.addEventListener("click", function(e){
     e.preventDefault
     cardsLatest()
+})
+top.addEventListener("click", function(e){
+    e.preventDefault
+    cardsTop()
 })
