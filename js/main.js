@@ -134,9 +134,6 @@ top.addEventListener("click", function(e){
 })
 
 
-const 
-
-
 // const openPost = () => {
 //     let card = getElementById("openPost")
 
@@ -146,4 +143,41 @@ const
 
 //     }
 // }
+
+
+// const arrPost = []
+// const getPost = async() =>{
+//     const res = await fetch("https://desafiodev-5e779-default-rtdb.firebaseio.com/posts.json")
+//     const data = await res.json()
+//    return(data.posts)
+// }
+
+
+
+const asideRightTag = (tag) =>{
+    let tagBoxCreator = getElementById("tagBoxCreator")
+    const tagName = (tag) =>{
+        const tagTitle = createElement(h4)
+        tagTitle.classList.add("border-bottom-1", "border-secondary-subtle","px-3", "py-2", "mb-0", "fw-bold")
+        tagTitle.innerText = `#${tag}`
+        return tagTitle
+    }
+
+    const taggedPost = () =>{
+        const taggedPostBox = document.createElement("div")
+        taggedPostBox.classList.add("border", "border-bottom-1", "border-secondary-subtle", "px-3", "py-1")
+
+        const taggedPostTitle = document.createElement("div")
+        taggedPostTitle.classList.add("text-decoration-none", "text-dark")
+        taggedPostTitle.setAttribute("href", url)
+        taggedPostTitle.innerText = "EL NOMBRE DEL POST"
+
+        const taggedPostComC = document.createElement("div")
+        taggedPostComC.classList.add("fs-6", "fw-light", "m-0")
+        taggedPostComC.innerText = "LA CANTIDAD DE COMENTARIOS"
+    }
+
+
+
+}
 
