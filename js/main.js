@@ -133,10 +133,6 @@ top.addEventListener("click", function(e){
     cardsTop()
 })
 
-
-const 
-
-
 // const openPost = () => {
 //     let card = getElementById("openPost")
 
