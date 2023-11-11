@@ -130,4 +130,9 @@
   border-radius: 4px;
   color: #3b49df;
   text-decoration: underline;
+}
+
+.login_logo {
+  width: auto;
+  height: 48px;
 }/*# sourceMappingURL=styles.css.map */
