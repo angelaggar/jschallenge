@@ -14,9 +14,11 @@
         <div class="row">            
         </div>
     </header>
-    <main class="container">
+    <main class="centerForm">
       <div>
-        <img class= "login_logo" src = "https://dev-to-uploads.s3.amazonaws.com/uploads/logos/original_logo_0DliJcfsTcciZen38gX9.png">
+        <div class="d-flex justify-content-center align-items-center">
+          <img class= "login_logo" src = "https://dev-to-uploads.s3.amazonaws.com/uploads/logos/original_logo_0DliJcfsTcciZen38gX9.png">
+        </div>
         <h1>Join the DEV Community</h1>
         <p>DEV Community is a community of 1,186,084 amazing developers</p>
           <div class="col-12">
@@ -29,11 +31,14 @@
                   <label for="exampleInputPassword1" class="form-label">Password</label>
                   <input type="password" class="form-control" id="inputPassword">
                 </div>
-                <div class="mb-3 form-check">
-                  <input type="checkbox" class="form-check-input" id="Check1">
+                <div class="mb-3 form-check d-flex justify-content-between">
+                  <span>
+                    <input type="checkbox" class="form-check-input" id="Check1">
                   <label class="form-check-label" for="check1">Remember me</label>
+                  </span>
+                  <a id="" href="#">Forgot password?</a>
                 </div>
-                <button type="button" class="btn btn-primary form-control" id="loginButton">Log in</button>
+                <button type="button" class="btn btnPurple m-2 mr-0 btn-primary form-control" id="loginButton">Log in</button>
             </form>
           </div>
       </div>

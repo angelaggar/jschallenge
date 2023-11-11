@@ -135,4 +135,12 @@ $btn-primary: #3b49df;
 .login_logo{
     width: auto;
     height: 48px;
+    justify-content: center;
+}
+
+.centerForm{
+    height: 100vh; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
