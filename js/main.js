@@ -59,6 +59,7 @@ const cardGen = async(postDb) =>{
 
     //info container//
     infoContainer.classList.add("p-4")
+    infoContainer.setAttribute("id", "openPost")
     infoContainer.append(info, hashTag, reactionContainer)
 
     //icon profile//
@@ -68,7 +69,7 @@ const cardGen = async(postDb) =>{
     profilePic.setAttribute("src", `${picture}`)
     profilePic.setAttribute("style", "width: 85px;")
     infoUser.classList.add("post-Creator", "card-body", "d-flex", "flex-row")
-    contDate.classList.add("d-flex", "flex-column")
+    contDate.classList.add("d-flex", "flex-column", "ps-2")
     userNameText.innerHTML = author
     date.innerText = new Date(time).toLocaleDateString('en-us', { month:"short", day:"numeric"}) 
     contDate.append(userNameText, date)
@@ -131,3 +132,18 @@ top.addEventListener("click", function(e){
     e.preventDefault
     cardsTop()
 })
+
+
+const 
+
+
+// const openPost = () => {
+//     let card = getElementById("openPost")
+
+//     card.addEventListener("click", function(e)){
+//         e.preventDefault
+//         window.open(``)
+
+//     }
+// }
+
