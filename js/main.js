@@ -17,7 +17,7 @@ let cardColumn = document.getElementById("cardColumn")
 const cardGen = async(postDb) =>{
     
     
-    const {author, body, comments, cover, picture, rate, tags, time, title} = postDb
+    const {author, body, comments, cover, picture, rate, tags, time, title,id} = postDb
     const mainC = document.createElement("div")
     const anchor = document.createElement("a")
     const image = document.createElement("img")
@@ -28,6 +28,7 @@ const cardGen = async(postDb) =>{
     const info = document.createElement("div")
     const infoTitle = document.createElement("h2")
     const infoText = document.createElement("p")
+    const infoId = document.createElement("span")
     const hashTagsContainer = document.createElement("div")
     const hashTag = document.createElement("p")
     const reactionContainer = document.createElement("div")
@@ -55,7 +56,11 @@ const cardGen = async(postDb) =>{
     infoTitle.classList.add("card-title", "fw-bold")
     infoTitle.innerHTML = title
     infoText.innerHTML = body
-    info.append(infoTitle, infoText)
+    infoId.classList.add("d-none")
+    infoId.setAttribute("id","infoId" )
+    infoId.innerText = id
+    info.append(infoTitle, infoText,infoId)
+    
 
     //info container//
     infoContainer.classList.add("p-4")
@@ -222,19 +227,16 @@ searchButton.addEventListener("click", () => {
 
 ///////////// ABRIR POST
 
-const openPost = async () => {
-    let allPost = await getPost()
-    let key = Object.entries(allPost).reduce((accum, current)=>{
-        
-        current = id.value
-        return [...accum, current]
-    })
-    console.log(key)
-    let openedPost = document.getElementById("openPost")
-    openedPost.addEventListener("click", () => {
-        window.open(`pages/post.html?entryKey=${key}`, "_blank");
-      });
-      
-}
 
+const openPost = async () => {
+    const postDB = await getPost()
+    const id= postDB.filter(post => post.id)
+    const key = document.getElementById("infoId")
+    const openedPost = document.getElementById("openPost")
+        if (key.includes(id)){ 
+            openedPost.addEventListener("click", () => {
+            window.open(pages/post.html?entryKey=${key}, "_blank")})
+        }
+    }
+    
 openPost()
