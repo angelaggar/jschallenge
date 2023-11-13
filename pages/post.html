@@ -19,7 +19,7 @@
                     alt="Dev.to">
                 </a>
                 <form class="d-flex flex-row" style="width: 60vh; height: 3.5rem">
-                    <input class="form-control mx-1 my-2" type="text" placeholder="Search">
+                    <input id="searchBtn" class="form-control mx-1 my-2" type="text" placeholder="Search">
                     <button class="btn btnPurple d-flex flex-row mx-0 my-2 text-align-center" type="button">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
                             <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
@@ -48,21 +48,21 @@
     <div class="d-flex container-fluid bg-body-secondary col col-11" style="margin-top: 80px;">
         <div id="mainCard" class="card m-1 col col-8">
             <div id="" class="post-Creator card-body d-flex flex-row">
-                <img src="https://randomuser.me/api/portraits/men/12.jpg" class="card-img-top rounded-circle" style="width: 35px;" alt="...">
-                <h5 class="card-text p-2">UserName</h5>
+                <img id="authorPicture" src="https://randomuser.me/api/portraits/men/12.jpg" class="card-img-top rounded-circle" style="width: 35px;" alt="...">
+                <h5 id="userName" class="card-text p-2">Person</h5>
             </div>
             <a href="" class="postlink"> 
-                <img src="https://picsum.photos/600/400" class="card-img-top" alt="Picture on the post">
+                <img id="postCover" src="https://picsum.photos/600/400" class="card-img-top" alt="Picture on the post">
             </a>
-                        <div class="ps-3">
+            <div class="ps-3">
                 <div id="card-tags" class="pl-5 mt-3">
                     <a href="../index.html" class="badge text-bg-light text-decoration-none fs-5">#discuss</a>
                     <a href="../index.html" class="badge text-bg-light text-decoration-none fs-5">#watercooler</a>
                     <a href="../index.html" class="badge text-bg-light text-decoration-none fs-5">#hacktoberfest23</a>
                 </div>
                 <div class="card-body">
-                    <h1 class="card-title fw-bold">Card title</h1>
-                    <p class="card-text">
+                    <h1 id="postTitle" class="card-title fw-bold">Card title</h1>
+                    <p id="postBody" class="card-text">
                         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias error fugiat amet repellat. Totam exercitationem aliquid earum sit quis harum quisquam nam recusandae voluptas! Dolore fuga quam illo sunt voluptate? Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse doloremque nisi iste? Eligendi sequi possimus suscipit recusandae veniam, mollitia vero, quia, excepturi sit libero quibusdam? Quos, officia! Quo, odit necessitatibus? <br><br>
                         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias error fugiat amet repellat. Totam exercitationem aliquid earum sit quis harum quisquam nam recusandae voluptas! Dolore fuga quam illo sunt voluptate? Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse doloremque nisi iste? Eligendi sequi possimus suscipit recusandae veniam, mollitia vero, quia, excepturi sit libero quibusdam? Quos, officia! Quo, odit necessitatibus? <br><br>
                         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias error fugiat amet repellat. Totam exercitationem aliquid earum sit quis harum quisquam nam recusandae voluptas! Dolore fuga quam illo sunt voluptate? Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse doloremque nisi iste? Eligendi sequi possimus suscipit recusandae veniam, mollitia vero, quia, excepturi sit libero quibusdam? Quos, officia! Quo, odit necessitatibus? <br><br>
@@ -110,7 +110,7 @@
             <img src="https://randomuser.me/api/portraits/men/12.jpg" class="card-img-top rounded-circle d-flex col col-2 p-2 mt-5" style="height: 60px; width: 60px;" alt="...">
             <div class="d-flex flex-column p-2 col col-11">
                 <h3 for="exampleFormControlTextarea1" class="form-label fw-bold">Top Comments (5)</h3>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                <textarea class="form-control" id="exampleFormControlTextarea2" rows="3"></textarea>
             </div>
         </div>
     </div>
@@ -120,6 +120,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" 
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" 
     crossorigin="anonymous"></script>
-    <script src="./js/main.js"></script>
+    <script src="../js/postPageFunctions.js"></script>
+    <script src="../api/getP.js"></script>
 </body>
 </html>

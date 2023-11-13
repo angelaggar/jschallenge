@@ -143,7 +143,7 @@ top.addEventListener("click", function(e){
 //     }
 // }
 
-//////////usuario logueado/////////
+//usuario logueado
 const USERS_ENDPOINT = "https://desafiodev-5e779-default-rtdb.firebaseio.com/users.json"
 
 const getAllUsers = async () =>{
@@ -219,3 +219,22 @@ searchInput.addEventListener("keyup", (event) => {
 searchButton.addEventListener("click", () => {
     searchPost()
 })
+
+///////////// ABRIR POST
+
+const openPost = async () => {
+    let allPost = await getPost()
+    let key = Object.entries(allPost).reduce((accum, current)=>{
+        
+        current = id.value
+        return [...accum, current]
+    })
+    console.log(key)
+    let openedPost = document.getElementById("openPost")
+    openedPost.addEventListener("click", () => {
+        window.open(`pages/post.html?entryKey=${key}`, "_blank");
+      });
+      
+}
+
+openPost()
