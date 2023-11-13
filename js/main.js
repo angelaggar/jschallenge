@@ -3,8 +3,10 @@ const relevant = document.getElementById("relevant")
 const latest = document.getElementById("latest")
 const top = document.getElementById("top")
 
+
+
 ///////////////API para llamar a los post/////////////
-const arrPost = []
+
 const getPost = async() =>{
     const res = await fetch("https://desafiodev-5e779-default-rtdb.firebaseio.com/posts.json")
     const data = await res.json()
@@ -14,11 +16,12 @@ const getPost = async() =>{
 
 //////////////Generador de cards///////////////////
 let cardColumn = document.getElementById("cardColumn")
+const mainC = document.createElement("div")
 const cardGen = async(postDb) =>{
     
     
-    const {author, body, comments, cover, picture, rate, tags, time, title} = postDb
-    const mainC = document.createElement("div")
+    const {author, body, comments, cover, picture, rate, tags, time, title, id} = postDb
+    
     const anchor = document.createElement("a")
     const image = document.createElement("img")
     const infoUser = document.createElement("div")
@@ -86,6 +89,7 @@ const cardGen = async(postDb) =>{
     //full card//
     mainC.classList.add("card", "m-1")
     mainC.append(anchor, infoUser, infoContainer)
+    mainC.setAttribute("id", `${id}`)
     cardColumn.append(mainC)
 }
 
@@ -109,7 +113,7 @@ const cardsLatest = async() =>{
     postDb.map((item) =>{
         cardGen(item)
     })
-    console.log("hola")
+    
 }
 const cardsTop = async() =>{
     cardColumn.innerHTML = ""
@@ -118,7 +122,7 @@ const cardsTop = async() =>{
     postDb.map(item =>{
         cardGen(item)
     })
-    console.log("hola")
+    
 }
 
 relevant.addEventListener("click", function(e){
@@ -225,16 +229,18 @@ searchButton.addEventListener("click", () => {
 
 const openPost = async () => {
     let allPost = await getPost()
-    let key = Object.entries(allPost).reduce((accum, current)=>{
-        
-        current = id.value
-        return [...accum, current]
+    allPost.map(item =>{
+        console.log(item.id)
     })
-    console.log(key)
-    let openedPost = document.getElementById("openPost")
-    openedPost.addEventListener("click", () => {
-        window.open(`pages/post.html?entryKey=${key}`, "_blank");
+    cardColumn.addEventListener("click", () => {
+        
+        allPost.map(item =>{
+            if(mainC.id == item.id){
+                window.open(`pages/post.html?entryKey=${item.id}`, "_blank");
+            }
+        })
       });
+   
       
 }
 
