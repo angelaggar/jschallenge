@@ -143,7 +143,7 @@ top.addEventListener("click", function(e){
 //     }
 // }
 
-//usuario logueado
+//////////usuario logueado/////////
 const USERS_ENDPOINT = "https://desafiodev-5e779-default-rtdb.firebaseio.com/users.json"
 
 const getAllUsers = async () =>{
@@ -184,4 +184,31 @@ const toggleViews = async () => {
 
 toggleViews()
 
- 
+/////////////////Search//////////////////
+let searchInput = document.getElementById("searchInput")
+let searchButton = document.getElementById("searchButton")
+
+const searchPost = async () => {
+    const postsArray = await getPost()
+    const filterResult = postsArray.filter(post => post.title.toLowerCase().includes(searchInput.value.toLowerCase()));
+    console.log(filterResult)
+
+    const printSearch = async() =>{
+        cardColumn.innerHTML = ""
+       
+        filterResult.map(post =>{
+            cardGen(post)
+        })}
+        printSearch()
+    }
+    
+searchInput.addEventListener("keyup", (event) => {
+    if(event.key === "Enter"){
+        event.preventDefault()
+        searchPost()
+    }
+})
+
+searchButton.addEventListener("click", () => {
+    searchPost()
+})

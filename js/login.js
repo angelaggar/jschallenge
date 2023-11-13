@@ -32,7 +32,7 @@ const logIn = async () => {
     if (!userFound) {alert(
         "contraseña incorrecta"
     )}
-}
+} 
 
 //listeners
 loginButton.addEventListener("click", () =>{
