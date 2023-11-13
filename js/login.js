@@ -32,6 +32,12 @@ const logIn = async () => {
     if (!userFound) {alert(
         "contraseña incorrecta"
     )}
+
+    if (Check1.checked === true){
+        localStorage.setItem("rememberUser", true)
+    } else {
+        localStorage.setItem("rememberUser", false)
+    }
 } 
 
 //listeners

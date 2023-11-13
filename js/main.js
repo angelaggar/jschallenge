@@ -184,6 +184,13 @@ const toggleViews = async () => {
 
 toggleViews()
 
+const deleteUser = () => {
+    if  (localStorage.getItem("rememberUser") === "false"){
+        const removeToken = () => {
+            localStorage.removeItem('token')}
+        window.addEventListener('beforeunload', removeToken)}
+}
+
 /////////////////Search//////////////////
 let searchInput = document.getElementById("searchInput")
 let searchButton = document.getElementById("searchButton")
