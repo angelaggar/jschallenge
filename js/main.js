@@ -241,38 +241,39 @@ openPost()
 //////////////////////ASIDE RIGHT
 
 const tagGiven = "discuss"
-const tagName = (tagGiven) =>{
-    const tagTitle = createElement(h4)
-    tagTitle.classList.add("border-bottom-1", "border-secondary-subtle","px-3", "py-2", "mb-0", "fw-bold")
-    tagTitle.innerText = `#${tagGiven}`
-    return tagTitle
-}
-
-const taggedPost = () =>{
-    const taggedPostBox = document.createElement("div")
-    taggedPostBox.classList.add("border", "border-bottom-1", "border-secondary-subtle", "px-3", "py-1")
-
-    const taggedPostTitle = document.createElement("div")
-    taggedPostTitle.classList.add("text-decoration-none", "text-dark")
-    taggedPostTitle.setAttribute("href", url)
-    taggedPostTitle.innerText = `${infoTitle}`
-
-    const taggedPostComC = document.createElement("div")
-    taggedPostComC.classList.add("fs-6", "fw-light", "m-0")
-    taggedPostComC.innerText = `${commentsC}`
-}
+const tagBox = () =>{
+    const tagName = (tagGiven) =>{
+        const tagTitle = createElement(h4)
+        tagTitle.classList.add("border-bottom-1", "border-secondary-subtle","px-3", "py-2", "mb-0", "fw-bold")
+        tagTitle.innerText = `#${tagGiven}`
+        return tagTitle
+    }
     
+    const taggedPost = () =>{
+        const taggedPostBox = document.createElement("div")
+        taggedPostBox.classList.add("border", "border-bottom-1", "border-secondary-subtle", "px-3", "py-1")
+    
+        const taggedPostTitle = document.createElement("div")
+        taggedPostTitle.classList.add("text-decoration-none", "text-dark")
+        taggedPostTitle.setAttribute("href", url)
+        taggedPostTitle.innerText = `${infoTitle}`
+    
+        const taggedPostComC = document.createElement("div")
+        taggedPostComC.classList.add("fs-6", "fw-light", "m-0")
+        taggedPostComC.innerText = `${commentsC}`
+    }
+}
+
+tagBox()
 
 const taggedPostsAside = async() =>{
     let tagBoxCreator = document.getElementById("tagBoxCreator")
     const postDb = await getPost()
     await [postDb][0].sort((a, b) => { return new Date(b.time).getTime() - new Date(a.time).getTime()})
     let tagsArray =() => {
-        postDb.map((item) =>{
-        taggedPost(item)})
+        postDb.splice(1, 4).forEach(item => taggedPost(item));
     }
-    let includedPost = tagsArray.slice(0,4)
-    return tagBoxCreator.append(tagName,includedPost)
+    return tagBoxCreator.append(tagBox)
 }
 
 taggedPostsAside()
