@@ -138,15 +138,6 @@ top.addEventListener("click", function(e){
     cardsTop()
 })
 
-// const openPost = () => {
-//     let card = getElementById("openPost")
-
-//     card.addEventListener("click", function(e)){
-//         e.preventDefault
-//         window.open(``)
-
-//     }
-// }
 
 //usuario logueado
 const USERS_ENDPOINT = "https://desafiodev-5e779-default-rtdb.firebaseio.com/users.json"
@@ -243,5 +234,7 @@ const openPost = async (mainC) => {
    
       
 }
+
+openPost()
 
 
