@@ -16,12 +16,11 @@ const getPost = async() =>{
 
 //////////////Generador de cards///////////////////
 let cardColumn = document.getElementById("cardColumn")
-const mainC = document.createElement("div")
+
 const cardGen = async(postDb) =>{
     
-    
     const {author, body, comments, cover, picture, rate, tags, time, title, id} = postDb
-    
+    const mainC = document.createElement("div")
     const anchor = document.createElement("a")
     const image = document.createElement("img")
     const infoUser = document.createElement("div")
@@ -91,6 +90,7 @@ const cardGen = async(postDb) =>{
     mainC.append(anchor, infoUser, infoContainer)
     mainC.setAttribute("id", `${id}`)
     cardColumn.append(mainC)
+    openPost(mainC)
 }
 
 const cardsRelevant = async() =>{
@@ -227,7 +227,7 @@ searchButton.addEventListener("click", () => {
 
 ///////////// ABRIR POST
 
-const openPost = async () => {
+const openPost = async (mainC) => {
     let allPost = await getPost()
     allPost.map(item =>{
         console.log(item.id)
@@ -244,4 +244,4 @@ const openPost = async () => {
       
 }
 
-openPost()
+
